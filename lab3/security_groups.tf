@@ -117,6 +117,9 @@ resource "aws_security_group" "lab3_sg_http_global" {
   }
 }
 
+###############################################################################
+# For RDS instance.
+
 resource "aws_security_group" "lab3_sg_rds" {
 
   name        = "lab3-sg-mysql-from-http"

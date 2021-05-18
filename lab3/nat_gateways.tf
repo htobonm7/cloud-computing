@@ -23,6 +23,7 @@ resource "aws_instance" "lab3_nat_instance_a" {
 
   vpc_security_group_ids = [aws_security_group.lab3_sg_nat_instances.id]
   subnet_id              = aws_subnet.lab3_public_subnet_a.id
+  source_dest_check      = false
 
   key_name = var.key_pair_name
 
@@ -42,6 +43,7 @@ resource "aws_instance" "lab3_nat_instance_b" {
 
   vpc_security_group_ids = [aws_security_group.lab3_sg_nat_instances.id]
   subnet_id              = aws_subnet.lab3_public_subnet_b.id
+  source_dest_check      = false
 
   key_name = var.key_pair_name
 
