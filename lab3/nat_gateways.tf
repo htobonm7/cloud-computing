@@ -1,4 +1,5 @@
 # NAT Gateway docs: https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/nat_gateway
+# EC2 Instances docs: https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/instance
 
 # WARNING: AWS Educate accounts can't create NAT Gateways.
 # I created instead the NAT Instances through the GUI together with the corresponding
@@ -20,8 +21,8 @@ resource "aws_instance" "lab3_nat_instance_a" {
   ami           = var.amazon_vpc_nat_ami_id
   instance_type = "t2.micro"
 
-  security_groups = [aws_security_group.lab3_sg_nat_instances.id]
-  subnet_id       = aws_subnet.lab3_public_subnet_a.id
+  vpc_security_group_ids = [aws_security_group.lab3_sg_nat_instances.id]
+  subnet_id              = aws_subnet.lab3_public_subnet_a.id
 
   key_name = var.key_pair_name
 
@@ -39,8 +40,8 @@ resource "aws_instance" "lab3_nat_instance_b" {
   ami           = var.amazon_vpc_nat_ami_id
   instance_type = "t2.micro"
 
-  security_groups = [aws_security_group.lab3_sg_nat_instances.id]
-  subnet_id       = aws_subnet.lab3_public_subnet_b.id
+  vpc_security_group_ids = [aws_security_group.lab3_sg_nat_instances.id]
+  subnet_id              = aws_subnet.lab3_public_subnet_b.id
 
   key_name = var.key_pair_name
 

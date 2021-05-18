@@ -19,3 +19,9 @@ variable "key_pair_name" {
   type    = string
   default = "cc-htobonm"
 }
+
+# AMI ID of: Amazon Linux 2 AMI (HVM), SSD Volume Type.
+variable "amazon_linux_2_ami_id" {
+  type    = string
+  default = "ami-0d5eff06f840b45e9"
+}
