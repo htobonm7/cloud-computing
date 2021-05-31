@@ -188,3 +188,5 @@ See [03-wordpress-deployment.yaml](kubernetes/03-wordpress-deployment.yaml).
    ```
 
    Problems with DNS records in Digital Ocean seems like a common issue among clients.
+   According to [https://www.whatsmydns.net/](https://www.whatsmydns.net/), DNS propagation
+   could take up to 48 hours.
